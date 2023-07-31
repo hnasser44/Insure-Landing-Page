@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    --dark-violet: hsl(256, 26%, 20%);
+    --grayish-blue: hsl(216, 30%, 68%);
+    --very-dark-violet: hsl(270, 9%, 17%);
+    --dark-grayish-violet: hsl(273, 4%, 51%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --font-normal: 400;
+    --font-bold: 700;
+    --padding: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+}
+
+
+li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--dark-violet);
+    transition: width 0.3s ease-in-out;
+}
+
+li:hover::after {
+    width: 100%;
+    cursor: pointer;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+    background-color: var(--very-light-gray);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding);
+}
+
+
+
+header ul {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+header ul li {
+    color: var(--dark-grayish-violet);
+}
+
+header ul li:last-child {
+    border: 2px solid var(--dark-violet);
+    padding: 0.8rem 1rem;
+    font-weight: var(--font-bold);
+    transition: all 0.3s ease-in-out;
+}
+
+header ul li:last-child::after {
+    display: none;
+}
+
+header ul li:last-child:hover {
+    background-color: var(--dark-violet);
+    color: var(--very-light-gray);
+
+}
+
+.mobile-nav {
+    background-color: var(--very-dark-violet);
+    position: fixed;
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+}
+
+.mobile-nav img {
+    align-self: flex-end;
+}
+
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: var(--very-light-gray);
+    margin-top: 15rem;
+    gap: 2rem;
+    font-size: 1.2rem;
+}
+
+.mobile-nav ul li:last-child {
+    border: 2px solid var(--very-light-gray);
+    width: 100%;
+    padding: 0.8rem 2rem;
+    font-weight: var(--font-bold);
+}
+
+
+
+
+section.hero img {
+    width: 100%;
+}
+
+section.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.hero .section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 6rem 1.5rem;
+    background-color: var(--dark-violet);
+    margin-top: -4px;
+    background-image: url(/images/bg-pattern-intro-left-mobile.svg), url(/images/bg-pattern-intro-right-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left, 100% 200%;
+    
+}
+
+
+section.hero .section-content h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'DM Serif Display', serif;
+    color: var(--very-light-gray);
+    letter-spacing: 0.2rem;
+    line-height: 1;
+    font-weight: var(--font-normal);
+    
+}
+
+section.hero .section-content p {
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: var(--font-bold);
+    color: var(--very-light-gray);
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+}
+
+section.hero .section-content button {
+    border: 2px solid var(--very-light-gray);
+    background-color: var(--dark-violet);
+    color: var(--very-light-gray);
+    padding: .8rem 2rem;
+    font-size: 1rem;
+    font-weight: var(--font-bold);
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+section.hero .section-content button:hover {
+    background-color: var(--very-light-gray);
+    color: var(--dark-violet);
+}
+
+section.different {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+section.different h2 {
+    font-size: 2.8rem;
+    font-family: 'DM Serif Display', serif;
+    color: var(--dark-violet);
+    font-weight: var(--font-normal);
+    letter-spacing: 1px;
+}
+
+section.different h2::before {
+    content: '';
+    display: block;
+    width: 9rem;
+    height: 1px;
+    background-color: var(--dark-violet);
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+
+section.different .flex-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+}
+
+section.different .flex-flow .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+section.different .flex-flow .item h3 {
+    font-size: 1.6rem;
+    font-weight: var(--font-normal);
+    color: var(--dark-violet);
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: 1px;
+}
+
+section.different .flex-flow .item p {
+    font-size: 1rem;
+    font-weight: var(--font-normal);
+    color: var(--dark-grayish-violet);
+    letter-spacing: 1px;
+    line-height: 1.5;
+    width: 80%;
+}
+
+.find-out {
+    background-color: var(--dark-violet);
+    margin: var(--padding);
+    margin-top: 6rem;
+    color: var(--very-light-gray);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-image: url(/images/bg-pattern-how-we-work-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.find-out h2 {
+    font-size: 2.4rem;
+    font-family: 'DM Serif Display', serif;
+    color: var(--very-light-gray);
+    font-weight: var(--font-normal);
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.find-out button {
+    border: 2px solid var(--very-light-gray);
+    background-color: transparent;
+    color: var(--very-light-gray);
+    padding: .8rem 2rem;
+    font-size: 1rem;
+    font-weight: var(--font-bold);
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.find-out button:hover {
+    background-color: var(--very-light-gray);
+    color: var(--dark-violet);
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8rem;
+    padding: var(--padding);
+    background-image: url(/images/bg-pattern-footer-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+footer .footer-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+    border-bottom: 1px solid var(--dark-grayish-violet);
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+footer .footer-header .logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer .footer-content {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+footer .footer-content .list h2 {
+    font-size: 1rem;
+    font-weight: var(--font-bold);
+    color: var(--grayish-blue);
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+footer .footer-content .list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-weight: var(--font-bold);
+}
+
+
+@media all and (min-width: 900px)
+{
+    header .open-menu-icon {
+        display: none;
+    }
+
+    header ul {
+        display: flex;
+    }
+
+    :root {
+        --padding: 1.5rem 6rem;
+    }   
+
+    section.different {
+        margin-top: 20rem;
+        align-items: flex-start;
+        padding: var(--padding);
+    }
+
+    section.different h2 {
+        font-size: 3.8rem;
+    }
+
+    section.different h2::before {
+        margin: 0;
+        margin-bottom: 3rem;
+    }
+
+    section.different .flex-flow {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    section.different .flex-flow .item {
+        align-items: flex-start;
+        flex: 1;
+    }
+
+    section.different .flex-flow .item p {
+        text-align: left;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .find-out {
+        background-image: url(/images/bg-pattern-how-we-work-desktop.svg);
+        padding: 5rem 4rem;
+        margin-top: 10rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .find-out h2 {
+        font-size: 2.9rem;
+        text-align: left;
+        width: 430px;
+    }
+
+    footer {
+        background-image: url(/images/bg-pattern-footer-desktop.svg);
+    }
+
+    footer .footer-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    footer .footer-header .logos {
+        gap: 2rem;
+    }   
+
+    footer .footer-content {
+        flex-direction: row;
+        align-self: flex-start;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    footer .footer-content .list {
+        flex: 1;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    footer .footer-content .list h2 {
+        text-align: left;
+    }
+
+    footer .footer-content .list ul {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
+
+
+@media all and (min-width: 1200px)
+{
+    header .open-menu-icon {
+        display: none;
+    }
+
+    header ul {
+        display: flex;
+    }
+
+    :root {
+        --padding: 1.5rem 6rem;
+    }
+
+    section.hero {
+        flex-direction: row-reverse;
+        position: relative;
+    }
+
+    section.hero .section-content {
+        align-items: flex-start;
+        padding: var(--padding);
+        gap: 3rem;
+        flex: 1;
+        padding: 10rem 6rem;
+        background-image: url(/images/bg-pattern-intro-left-desktop.svg), url(/images/bg-pattern-intro-right-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: bottom left, top right;  
+    }
+
+    section.hero .section-content h1 {
+        text-align: left;
+        font-size: 4rem;
+    }
+
+    section.hero .section-content p {
+        text-align: left;
+        width: 50%;
+    }
+
+    section.hero img {
+     position: absolute;
+        top: 25%;
+        right: 12%;
+        width: 500px; 
+    }
+
+    
+
+
+
+
+
+
+
+}
